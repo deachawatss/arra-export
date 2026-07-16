@@ -203,7 +203,8 @@ async fn verify_user_target(target: &Url) -> Result<(), OracleClientError> {
     match target.host() {
         Some(Host::Ipv4(address)) => verify_ip(IpAddr::V4(address)),
         Some(Host::Ipv6(address)) => verify_ip(IpAddr::V6(address)),
-        Some(Host::Domain("localhost")) => Ok(()),
+        Some(Host::Domain("localhost"))
+        | Some(Host::Domain("host.docker.internal")) => Ok(()),
         Some(Host::Domain(host)) => {
             let port = target
                 .port_or_known_default()
