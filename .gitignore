@@ -1,0 +1,9 @@
+/target/
+/frontend/node_modules/
+/frontend/.svelte-kit/
+/frontend/build/
+/frontend/test-results/
+/frontend/playwright-report/
+/artifacts/
+/.maw/
+/.omx/
